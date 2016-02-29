@@ -42,9 +42,9 @@
 
 **4. style `position: 'absolute'`**
 - iOS下正常  
-- android下，`position: 'absolute'` 超过父节点高宽部分，会隐藏掉。解决办法：当需要用`position: 'absolute'`的时候，恰巧要求：子节点定位超出父节点高或宽，放弃使用，改用别的布局，或者将字节点放到于父节点同级，再定位。
+- android下，`position: 'absolute'` 超过父节点高宽部分，会隐藏掉。解决办法：当需要用`position: 'absolute'`的时候，恰巧要求：子节点定位超出父节点高或宽，放弃使用，改用别的布局，或者将子节点放到于父节点同级，再定位。
 
-**5. `api` <b>NativeMethodsMixin</b>**
+**5. api `NativeMethodsMixin`**
 - iOS下正常  
 - android下，回调函数获取不到视图的尺寸 `x`、`y`、`width`、`heigth`、`pageX`、`pageY` 等值。可以考虑用 `onLayout` 属性来代替，需要注意的是，需要计算 layout 的视图，载入之后，防止内部不必要的重绘引起的尺寸变化，基本上保证 state 改变后，视图的尺寸即可预见。
 
