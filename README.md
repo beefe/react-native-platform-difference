@@ -1,7 +1,7 @@
 #React Native 双平台差异及解决方法(0.20)
 
 ### 标签及属性差异
--  
+--  
 
 **1. TextInput**
 - iOS下的`textAlign`取值 `auto` `left` `right` `center` `justify`  
@@ -49,15 +49,32 @@
 
 
 ### API差异
--  
+--  
 
 **1. `api` NativeMethodsMixin `static measure(callback: MeasureOnSuccessCallback)`**
 - iOS下正常  
 - android下，回调函数获取不到视图的尺寸 `x`、`y`、`width`、`heigth`、`pageX`、`pageY` 等值。可以考虑用 `onLayout` 属性来代替，需要注意的是，需要计算 layout 的视图，载入之后，防止内部不必要的重绘引起的尺寸变化，基本上保证 state 改变后，视图的尺寸即可预见。
 
+**2. `组件` Picker**
+- iOS下跟PickerIOS的UI一致(类似iOS平台的时间选择组件)，有较好的体验  
+- android下则是由类似web端`select`标签的UI构成，体验较差  
+- 可以使用组件 [react-native-picker](https://github.com/beefe/react-native-picker) 来兼容UI或实现多列picker
+
+**3. `组件` Toast**
+- iOS下暂时没有该组件  
+- android下有`ToastAndroid`  
+- 可以使用组件 [react-native-toast](https://github.com/remobile/react-native-toast) 来兼容双平台
+
+**4. `组件` 轮播图**
+- 可以使用组件 [react-native-slide](https://github.com/beefe/react-native-slide) 来兼容双平台
+
+**5. `组件` 微信SDK**
+- iOS下使用组件 [react-native-wechat-ios](https://github.com/beefe/react-native-wechat-ios)  
+- android下使用组件 [react-native-wechat-android](https://github.com/beefe/react-native-wechat-android)
+
 
 ### 其他差异
--  
+--  
 
 **1. 返回事件的处理**
 - iOS如果使用`NavigatorIOS`，并且设置了`navigationBarHidden={true}`(隐藏NavigationBar)，将会导致右滑返回手势失效，解决方法：使用`Navigator`代替，但需要自己设置切场动画。  
