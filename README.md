@@ -1,6 +1,7 @@
 #React Native 双平台差异及解决方法(0.20)
 
 ### 标签及属性差异
+-  
 
 **1. TextInput**
 - iOS下的`textAlign`取值 `auto` `left` `right` `center` `justify`  
@@ -48,18 +49,22 @@
 
 
 ### API差异
+-  
+
 **1. `api` NativeMethodsMixin `static measure(callback: MeasureOnSuccessCallback)`**
 - iOS下正常  
 - android下，回调函数获取不到视图的尺寸 `x`、`y`、`width`、`heigth`、`pageX`、`pageY` 等值。可以考虑用 `onLayout` 属性来代替，需要注意的是，需要计算 layout 的视图，载入之后，防止内部不必要的重绘引起的尺寸变化，基本上保证 state 改变后，视图的尺寸即可预见。
 
 
 ### 其他差异
-**1. 返回事件的处理 **
+-  
+
+**1. 返回事件的处理**
 - iOS如果使用`NavigatorIOS`，并且设置了`navigationBarHidden={true}`(隐藏NavigationBar)，将会导致右滑返回手势失效，解决方法：使用`Navigator`代替，但需要自己设置切场动画。  
 - android物理返回键，需要在每个`Navigator`的源头使用`BackAndroid`做监听，如果`this.navigator.state.routeStack.length === 1`，则可以认为当前处于根view，可以退出app。否则将navigator往回退1即可。
 ```javascript
     //android
-    import {Navigator, BackAndroid} from 'react-native';
+    import React, {Navigator, BackAndroid} from 'react-native';
     //拓展类似于NavigatorIOS的popN
     Navigator.prototype.popN = function(n) {
         let routeStack = this.state.routeStack;
@@ -68,7 +73,6 @@
             this.popToRoute(routeStack[index]);
         }
     };
-
     class MyApp extends React.Component {
         ...
         componentDidMount(){
@@ -84,7 +88,6 @@
                 }
             });
         }
-
         render(){
             <Navigator
                 ref={(navigator) => {
