@@ -55,20 +55,26 @@
 - iOS下正常  
 - android下，回调函数获取不到视图的尺寸 `x`、`y`、`width`、`heigth`、`pageX`、`pageY` 等值。可以考虑用 `onLayout` 属性来代替，需要注意的是，需要计算 layout 的视图，载入之后，防止内部不必要的重绘引起的尺寸变化，基本上保证 state 改变后，视图的尺寸即可预见。
 
-**2. `组件` Picker**
+**2. `api` `Dimensions.get('window').height`**
+- 两个平台都是整个屏幕的高度(包含statusBar)  
+- iOS平台的布局是从statusBar的顶端开始  
+- android平台的布局是从statusBar的底端开始  
+- 如果设置view的高度是`Dimensions.get('window').height`，然后设置`position: 'absolute', top: 0`，会发现android平台view的底端被遮住了一小部分，这一小部分正好就是android平台statusBar的高度。解决方法：设置view的高度是整屏的高度减去statusBar的高度，或者设置`top`值为负的statusBar的高度
+
+**3. `组件` Picker**
 - iOS下跟PickerIOS的UI一致(类似iOS平台的时间选择组件)，有较好的体验  
 - android下则是由类似web端`select`标签的UI构成，体验较差  
 - 可以使用组件 [react-native-picker](https://github.com/beefe/react-native-picker) 来兼容UI或实现多列picker
 
-**3. `组件` Toast**
+**4. `组件` Toast**
 - iOS下暂时没有该组件  
 - android下有`ToastAndroid`  
 - 可以使用组件 [react-native-toast](https://github.com/remobile/react-native-toast) 来兼容双平台
 
-**4. `组件` 轮播图**
+**5. `组件` 轮播图**
 - 可以使用组件 [react-native-slide](https://github.com/beefe/react-native-slide) 来兼容双平台
 
-**5. `组件` 微信SDK**
+**6. `组件` 微信SDK**
 - iOS下使用组件 [react-native-wechat-ios](https://github.com/beefe/react-native-wechat-ios)  
 - android下使用组件 [react-native-wechat-android](https://github.com/beefe/react-native-wechat-android)
 
