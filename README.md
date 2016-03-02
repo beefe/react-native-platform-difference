@@ -58,8 +58,8 @@
 **2. `api` `Dimensions.get('window').height`**
 - 两个平台都是整个屏幕的高度(包含statusBar)  
 - iOS平台的布局是从statusBar的顶端开始  
-- android平台的布局是从statusBar的底端开始  
-- 如果设置view的高度是`Dimensions.get('window').height`，然后设置`position: 'absolute', top: 0`，会发现android平台view的底端被遮住了一小部分，这一小部分正好就是android平台statusBar的高度。解决方法：设置view的高度是整屏的高度减去statusBar的高度，或者设置`top`值为负的statusBar的高度
+- android平台的布局是从statusBar的底端开始(设置`translucent: true`后也从statusBar顶端开始)  
+- 如果设置view的高度是`Dimensions.get('window').height`，然后设置`position: 'absolute', top: 0`，会发现android平台view的底端被遮住了一小部分，这一小部分正好就是android平台statusBar的高度。解决方法：设置view的高度是整屏的高度减去statusBar的高度，或者设置`top`值为负的statusBar的高度，或者给每一个`Navigator`设置`<StatusBar translucent={true}/>`
 
 **3. `组件` Picker**
 - iOS下跟PickerIOS的UI一致(类似iOS平台的时间选择组件)，有较好的体验  
