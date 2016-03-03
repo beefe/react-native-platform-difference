@@ -48,6 +48,10 @@
 - android下，`position: 'absolute'` 超过父节点高宽部分，会隐藏掉。解决办法：当需要用`position: 'absolute'`的时候，恰巧要求：子节点定位超出父节点高或宽，放弃使用，改用别的布局，或者将子节点放到于父节点同级，再定位。
 
 
+**5. style `borderRadius`**
+- iOS下正常
+- Android下，不支持类似`borderTopLeftRadius`这种写法
+
 ### API差异
 --  
 
