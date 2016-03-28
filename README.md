@@ -6,6 +6,7 @@
 **1. TextInput**
 - iOS下的`textAlign`取值 `auto` `left` `right` `center` `justify`  
 - android下的`textAlign`取值为 `start` `center` `end`  
+安卓平台有黑色边框和选中黄框，可通过设置`underlineColorAndroid='rgba(0,0,0,0)'`去掉  
 安卓平台无清除按钮，可以使用 [react-native-textinput](https://github.com/beefe/react-native-textinput) 来兼容双平台  
 
 **2. Image**
