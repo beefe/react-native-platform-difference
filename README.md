@@ -53,6 +53,8 @@
 - iOS下正常
 - Android下，不支持类似`borderTopLeftRadius`这种写法
 
+
+
 ### API差异
 --  
 
@@ -108,14 +110,21 @@
 ```
 
 **2. 有关屏幕的高度`Dimensions.get('window').height`**
-- 两个平台都是整个屏幕的高度(包含statusBar)  
+- 两个平台都是整个屏幕的高度(包含statusBar, 安卓端不包含虚拟按键)  
 - iOS平台的布局是从statusBar的顶端开始  
 - android平台的布局是从statusBar的底端开始(设置`translucent: true`后也从statusBar顶端开始)  
 - 如果设置view的高度是`Dimensions.get('window').height`，然后设置`position: 'absolute', top: 0`，会发现android平台view的底端被遮住了一小部分，这一小部分正好就是android平台statusBar的高度  
+- 安卓端statusBar通常是25dp，虚拟按键通常是48dp  
 - 解决方法有四：
   - 设置view的高度是整屏的高度减去statusBar的高度  
   - 设置`top`值为负的statusBar的高度  
   - 设置`bottom: -Dimensions.get('window').height` 替代`top: 0`  
-  - 在每一个`Navigator`的入口设置`<StatusBar translucent={true}/>`
+  - 在每一个`Navigator`的入口设置`<StatusBar translucent={true}/>`  
 
+- <b>大坑:</b> 有些手机通过上述方法获取到的屏幕高度竟然包含了虚拟按键的高度，如魅族pro4，只能引入[react-native-device-info](https://github.com/rebeccahughes/react-native-device-info)这个库来hack一下了
 
+**3. Android过门动画卡顿**
+- 从测试结果来看是网络请求和过门动作同时进行导致，将网络请求延迟到过门动画结束后即可解决。深层原因？
+
+**4. Android启动图launcher**
+- 修改MainActivity的父类ReactActivity，在加载RN的view的同时在该view上面覆盖一个原生的view，用来显示启动图，并且设置N秒后隐藏或等待拿到首页数据接口后隐藏
