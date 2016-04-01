@@ -128,3 +128,10 @@
 
 **4. Android启动图launcher**
 - 修改MainActivity的父类ReactActivity，在加载RN的view的同时在该view上面覆盖一个原生的view，用来显示启动图，并且设置N秒后隐藏或等待拿到首页数据接口后隐藏
+
+**5. 支持程度问题**
+- iOS支持7.0及以上  
+- Android支持API 16+ (Android 4.1) 因为使用了[Choreographer](http://developer.android.com/reference/android/view/Choreographer.html)  
+- 友盟2016-02数据：
+  - iOS7.0 以下已不计入主流版本(1%以下)，和其他非主流版本共占4.92%  
+  - Android4.0 还有2.16%，其他非主流版本共占7.47%
