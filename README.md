@@ -56,6 +56,7 @@
 - Android下，不支持类似`borderTopLeftRadius`这种写法
 
 **6. style `lineHeight`**
+- 两端都<b>不支持</b>类似web `height=lineHeight`的方式实现居中
 - iOS会显示在lineHeight的最底端
 - Android会显示在lineHeight的最顶端
 ![lineHeight](./img/lineheight.jpg)
