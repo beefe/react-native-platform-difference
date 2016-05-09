@@ -8,6 +8,8 @@
 - android下的`textAlign`取值为 `start` `center` `end`  
 安卓平台有黑色边框和选中黄框，可通过设置`underlineColorAndroid='rgba(0,0,0,0)'`去掉  
 安卓平台无清除按钮，可以使用 [react-native-textinput](https://github.com/beefe/react-native-textinput) 来兼容双平台  
+- android下默认有大概`10dp`的`paddingLeft`和`paddingRight`  
+- android下的`placeholder`默认颜色大概在`#777`，iOS下默认颜色大概在`#ccc`  
 
 **2. Image**
 - iOS下`resizeMode`可以写在行间属性，也可以写在style，后者覆盖前者  
@@ -52,6 +54,12 @@
 **5. style `borderRadius`**
 - iOS下正常
 - Android下，不支持类似`borderTopLeftRadius`这种写法
+
+**6. style `lineHeight`**
+- iOS会显示在lineHeight的最底端
+- Android会显示在lineHeight的最顶端  
+[lineHeight](./img/lineheight.jpg)
+
 
 
 
