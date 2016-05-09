@@ -57,8 +57,8 @@
 
 **6. style `lineHeight`**
 - iOS会显示在lineHeight的最底端
-- Android会显示在lineHeight的最顶端  
-[lineHeight](./img/lineheight.jpg)
+- Android会显示在lineHeight的最顶端
+![lineHeight](./img/lineheight.jpg)
 
 
 
