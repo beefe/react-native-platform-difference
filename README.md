@@ -31,6 +31,10 @@
 
 **将[rnpm](https://github.com/rnpm/rnpm)合并进了`react-native`项目**
 
+以前: 需要`npm install rnpm -g`，然后才能`rnpm link`  
+
+现在: 直接`react-native link`  
+
 
 #React Native 双平台差异及解决方法(0.20)
 
