@@ -1,3 +1,33 @@
+#React Native 重大变更
+
+### [v0.25.1](https://github.com/facebook/react-native/releases/tag/v0.25.1)
+
+**由原来的`react-native`组件一锅端，变成了更接近`react`标准的写法**
+
+以前：
+```javascript
+    import React, { Component, View } from 'react-native';
+```
+现在:
+```javascript
+    import React, { Component } from 'react';
+    import { View } from 'react-native';
+```
+影响：赶紧升级组件去吧  
+
+
+### [v0.29.0](https://github.com/facebook/react-native/releases/tag/v0.29.0)
+
+**安卓端程序入口文件变化**
+
+以前：程序入口文件为`MainActivity.java`  
+
+现在：分离成了程序入口文件`MainApplication.java`和主视图文件`MainActivity.java`  
+
+影响：添加原生组件的方式有变化，不过有了`rnpm`这些都是浮云了。以前添加启动图的方式也会收到影响  
+
+
+
 #React Native 双平台差异及解决方法(0.20)
 
 ### 标签及属性差异
@@ -147,3 +177,5 @@
 
 **6. Navigator注意事项**
 - 默认背景透明，切场的时候会透底，需要给每个navigator设置背景色
+
+
