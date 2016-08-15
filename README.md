@@ -29,7 +29,7 @@
 
 ### [v0.31.0](https://github.com/facebook/react-native/releases/tag/v0.31.0)
 
-**将[rnpm](https://github.com/rnpm/rnpm)合并进了`react native`项目**
+**将[rnpm](https://github.com/rnpm/rnpm)合并进了`react-native`项目**
 
 
 #React Native 双平台差异及解决方法(0.20)
