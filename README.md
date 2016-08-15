@@ -27,6 +27,10 @@
 影响：添加原生组件的方式有变化，不过有了`rnpm`这些都是浮云了(然而也是到了`v0.29.2`才能正常添加)。以前添加启动图的方式也会受到影响  
 
 
+### [v0.31.0](https://github.com/facebook/react-native/releases/tag/v0.31.0)
+
+**将[rnpm](https://github.com/rnpm/rnpm)合并进了`react native`项目**
+
 
 #React Native 双平台差异及解决方法(0.20)
 
