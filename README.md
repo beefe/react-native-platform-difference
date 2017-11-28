@@ -1,4 +1,30 @@
-#React Native 重大变更
+# React Native 重大变更
+
+### [v0.42.3](https://github.com/facebook/react-native/tree/v0.42.3)
+
+**不再支持`Xcode 7.x`**
+
+目前已知的7.x中的报错：`yourProject/node_modules/react-native/React/Views/RCTTabBarItem.m:115:18: Property 'badgeColor' not found on object of type 'UITabBarItem *'`
+
+### [v0.31.0](https://github.com/facebook/react-native/releases/tag/v0.31.0)
+
+**将[rnpm](https://github.com/rnpm/rnpm)合并进了`react-native`项目**
+
+以前: 需要`npm install rnpm -g`，然后才能`rnpm link`  
+
+现在: 直接`react-native link`  
+
+
+### [v0.29.0](https://github.com/facebook/react-native/releases/tag/v0.29.0)
+
+**安卓端程序入口文件变化**
+
+以前：程序入口文件为`MainActivity.java`  
+
+现在：分离成了程序入口文件`MainApplication.java`和主视图文件`MainActivity.java`  
+
+影响：添加原生组件的方式有变化，不过有了`rnpm`这些都是浮云了(然而也是到了`v0.29.2`才能正常添加)。以前添加启动图的方式也会受到影响 
+
 
 ### [v0.25.1](https://github.com/facebook/react-native/releases/tag/v0.25.1)
 
@@ -16,30 +42,17 @@
 影响：赶紧升级组件去吧  
 
 
-### [v0.29.0](https://github.com/facebook/react-native/releases/tag/v0.29.0)
-
-**安卓端程序入口文件变化**
-
-以前：程序入口文件为`MainActivity.java`  
-
-现在：分离成了程序入口文件`MainApplication.java`和主视图文件`MainActivity.java`  
-
-影响：添加原生组件的方式有变化，不过有了`rnpm`这些都是浮云了(然而也是到了`v0.29.2`才能正常添加)。以前添加启动图的方式也会受到影响  
+ 
 
 
-### [v0.31.0](https://github.com/facebook/react-native/releases/tag/v0.31.0)
 
-**将[rnpm](https://github.com/rnpm/rnpm)合并进了`react-native`项目**
-
-以前: 需要`npm install rnpm -g`，然后才能`rnpm link`  
-
-现在: 直接`react-native link`  
 
 
 #React Native 双平台差异及解决方法(0.20)
 
+--- 
 ### 标签及属性差异
---  
+ 
 
 **1. TextInput**
 - iOS下的`textAlign`取值 `auto` `left` `right` `center` `justify`  
