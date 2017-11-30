@@ -1,5 +1,11 @@
 # React Native 重大变更
 
+### [v0.47.2](https://github.com/facebook/react-native/tree/v0.47.2)
+
+**Android端移除了`createJSModules`**
+
+若使用的组件中含有对createJSModules的@Override将会报错  
+
 ### [v0.42.3](https://github.com/facebook/react-native/tree/v0.42.3)
 
 **不再支持`Xcode 7.x`**
