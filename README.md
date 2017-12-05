@@ -1,16 +1,25 @@
 # React Native 重大变更
 
+### [v0.49.0](https://github.com/facebook/react-native/tree/v0.49.0)
+
+**入口文件改为单一的`index.js`**
+
+此版本之前iOS和Android的入口文件是分开的，分别是index.ios.js和index.android.js  
+
+
 ### [v0.47.2](https://github.com/facebook/react-native/tree/v0.47.2)
 
 **Android端移除了`createJSModules`**
 
 若使用的组件中含有对createJSModules的@Override将会报错  
 
+
 ### [v0.42.3](https://github.com/facebook/react-native/tree/v0.42.3)
 
 **不再支持`Xcode 7.x`**
 
 目前已知的7.x中的报错：`yourProject/node_modules/react-native/React/Views/RCTTabBarItem.m:115:18: Property 'badgeColor' not found on object of type 'UITabBarItem *'`
+
 
 ### [v0.31.0](https://github.com/facebook/react-native/releases/tag/v0.31.0)
 
