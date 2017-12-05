@@ -61,13 +61,10 @@
 
 
 
-
-
 # React Native 双平台差异及解决方法(0.20)
 
---- 
+
 ### 标签及属性差异
- 
 
 **1. TextInput**
 - iOS下的`textAlign`取值 `auto` `left` `right` `center` `justify`  
@@ -131,7 +128,6 @@
 
 
 ### API差异
---  
 
 **1. `api` NativeMethodsMixin `static measure(callback: MeasureOnSuccessCallback)`**
 - iOS下正常  
@@ -141,7 +137,6 @@
 
 
 ### 常见问题：
---  
 
 **1. 返回事件的处理**
 - iOS如果使用`NavigatorIOS`，并且设置了`navigationBarHidden={true}`(隐藏NavigationBar)，将会导致右滑返回手势失效，解决方法：使用`Navigator`代替，但需要自己设置切场动画。  
